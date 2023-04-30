@@ -72,11 +72,11 @@ while game:
             speed_x *= -1
         if ball.rect.x <= 0:
             finish = True
-            window.blit(win1,(130,210))
+            window.blit(win2,(130,210))
             mixer.music.pause()
         if ball.rect.x >= win_wight - 50:
             finish = True
-            window.blit(win2,(130,210))
+            window.blit(win1,(130,210))
             mixer.music.pause()
     else:
         finish = False
