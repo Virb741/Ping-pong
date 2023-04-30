@@ -73,8 +73,22 @@ while game:
         if ball.rect.x <= 0:
             finish = True
             window.blit(win1,(130,210))
+            mixer.music.pause()
         if ball.rect.x >= win_wight - 50:
             finish = True
             window.blit(win2,(130,210))
+            mixer.music.pause()
+    else:
+        finish = False
+        speed_x = 4
+        speed_y = 4
+        racket1.kill()
+        racket1.kill()
+        ball.kill()
+        time.delay(3000)
+        racket1 = Player('racket.png', 40,180,30,110,15)
+        racket2 = Player('racket.png', 540,180,30,110,15)
+        ball = GameSprite('tenis_ball.png', 225,225,50,50,10)
+        mixer.music.unpause()
     display.update()
     clock.tick(FPS)
